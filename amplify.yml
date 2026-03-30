@@ -11,6 +11,8 @@ frontend:
         - echo "MONGODB_URI=$MONGODB_URI" >> .env.production
         - echo "JWT_SECRET=$JWT_SECRET" >> .env.production
         - echo "JWT_EXPIRES_IN=$JWT_EXPIRES_IN" >> .env.production
+        - echo "IMAGE_STORAGE=$IMAGE_STORAGE" >> .env.production
+        - echo "WHISPER_MODEL=$WHISPER_MODEL" >> .env.production
         - echo "FASHN_API_KEY=$FASHN_API_KEY" >> .env.production
         - echo "REPLICATE_API_TOKEN=$REPLICATE_API_TOKEN" >> .env.production
         - echo "SEGMIND_API_KEY=$SEGMIND_API_KEY" >> .env.production
