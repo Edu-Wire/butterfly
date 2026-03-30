@@ -14,25 +14,25 @@ const collections = [
     id: '01',
     title: 'The Chrysalis',
     season: 'AW/26',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg",
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00907.JPG",
   },
   {
     id: '02',
     title: 'Midnight Monarch',
     season: 'Evening',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400106/butterfly-couture/1771400105742-blob.jpg",
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+43+00+PM+(8).jpg",
   },
   {
     id: '03',
     title: 'Silk & Stone',
     season: 'RS/26',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400121/butterfly-couture/1771400121271-blob.jpg",
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00461.JPG",
   },
   {
     id: '04',
     title: 'Ethereal Armor',
     season: 'SS/26',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400157/butterfly-couture/1771400156846-blob.jpg",
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+42+31+PM+(1).jpg",
   },
 ]
 

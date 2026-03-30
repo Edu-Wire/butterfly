@@ -15,7 +15,7 @@ const pressItems = [
     title: 'The Return of Structure',
     excerpt: 'Butterfly Couture challenges the fluidity of modern fashion with rigid architectural forms.',
     date: 'OCT 24',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg"
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00907.JPG"
   },
   {
     id: '02',
@@ -23,7 +23,7 @@ const pressItems = [
     title: 'Monochrome Studies',
     excerpt: 'A conversation with Isabelle Laurent on why color is a distraction from the silhouette.',
     date: 'SEP 24',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400106/butterfly-couture/1771400105742-blob.jpg"
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+43+00+PM+(8).jpg"
   },
   {
     id: '03',
@@ -31,7 +31,7 @@ const pressItems = [
     title: 'Avant-Garde Tailoring',
     excerpt: 'How the brand is bridging the gap between streetwear sensibilities and couture techniques.',
     date: 'AUG 24',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400121/butterfly-couture/1771400121271-blob.jpg"
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00461.JPG"
   },
   {
     id: '04',
@@ -39,7 +39,7 @@ const pressItems = [
     title: 'Fabric as Architecture',
     excerpt: 'The sourcing journey behind the raw silk and structured wools of the Winter collection.',
     date: 'JUL 24',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400157/butterfly-couture/1771400156846-blob.jpg"
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+42+31+PM+(1).jpg"
   },
   {
     id: '05',
@@ -47,7 +47,7 @@ const pressItems = [
     title: 'Quiet Loudness',
     excerpt: 'Reviewing the runway show that had the industry whispering.',
     date: 'JUN 24',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400180/butterfly-couture/1771400180246-blob.jpg"
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Aug+25+2025%2C+7+04+46+AM.jpg"
   },
   {
     id: '06',
@@ -55,7 +55,7 @@ const pressItems = [
     title: 'Portrait of a Designer',
     excerpt: 'An intimate look into the studio life of our Creative Director.',
     date: 'MAY 24',
-    image: "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg"
+    image: "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+42+31+PM+(1).jpg"
   }
 ];
 

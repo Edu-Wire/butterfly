@@ -129,7 +129,7 @@ export default async function Home() {
 
         {/* Animated Background Image */}
         <div
-          className="absolute inset-0 bg-[url('https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg')] bg-cover bg-center bg-no-repeat opacity-60 transition-transform duration-[15s] ease-out group-hover:scale-110"
+          className="absolute inset-0 bg-[url('https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00907.JPG')] bg-cover bg-center bg-no-repeat opacity-60 transition-transform duration-[15s] ease-out group-hover:scale-110"
         />
 
         {/* Dark gradient overlay to ensure text readability */}

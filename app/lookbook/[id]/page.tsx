@@ -17,9 +17,9 @@ const lookbookData = {
     season: 'AW/26',
     description: 'A transformative collection that explores the delicate balance between structure and fluidity. This autumn/winter collection draws inspiration from the metamorphosis of nature, featuring architectural silhouettes that evolve with movement.',
     images: [
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400106/butterfly-couture/1771400105742-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400121/butterfly-couture/1771400121271-blob.jpg"
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00907.JPG",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+43+00+PM+(8).jpg",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00461.JPG"
     ],
     details: {
       photographer: 'Marcus Chen',
@@ -35,9 +35,9 @@ const lookbookData = {
     season: 'Evening',
     description: 'An exploration of nocturnal elegance and the transformative power of evening wear. This collection celebrates the monarch butterfly\'s journey through darkness into light.',
     images: [
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400106/butterfly-couture/1771400105742-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400157/butterfly-couture/1771400156846-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400180/butterfly-couture/1771400180246-blob.jpg"
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+43+00+PM+(8).jpg",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+42+31+PM+(1).jpg",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Aug+25+2025%2C+7+04+46+AM.jpg"
     ],
     details: {
       photographer: 'Jean-Paul Dubois',
@@ -53,9 +53,9 @@ const lookbookData = {
     season: 'RS/26',
     description: 'A resort collection that juxtaposes the softness of silk with the strength of stone. This exploration of contrasts creates pieces that are both delicate and enduring.',
     images: [
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400121/butterfly-couture/1771400121271-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400180/butterfly-couture/1771400180246-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg"
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00461.JPG",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Aug+25+2025%2C+7+04+46+AM.jpg",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00907.JPG"
     ],
     details: {
       photographer: 'Roberto Silva',
@@ -71,9 +71,9 @@ const lookbookData = {
     season: 'SS/26',
     description: 'A spring/summer collection that reimagines protection as beauty. These pieces serve as both armor and adornment, celebrating strength in vulnerability.',
     images: [
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400157/butterfly-couture/1771400156846-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400048/butterfly-couture/1771400047722-blob.jpg",
-      "https://res.cloudinary.com/dgpm72swx/image/upload/v1771400106/butterfly-couture/1771400105742-blob.jpg"
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+42+31+PM+(1).jpg",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/AZY00907.JPG",
+      "https://ecom-digiwire.s3.ap-south-1.amazonaws.com/random+/Photo+Oct+04+2025%2C+12+43+00+PM+(8).jpg"
     ],
     details: {
       photographer: 'David Kim',
