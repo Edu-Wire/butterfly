@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     try {
         const formData = await req.formData();
         const file = formData.get('file') as File;
-        const storageStrategy = process.env.IMAGE_STORAGE || 'cloudinary';
+        const storageStrategy = (process.env.IMAGE_STORAGE || 's3').trim().toLowerCase();
 
         if (!file) {
             return NextResponse.json(
