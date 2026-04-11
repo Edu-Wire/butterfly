@@ -3,12 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-    User, Package, Heart, MapPin, Settings, LogOut, Home, Truck
+    User, Package, Heart, MapPin, Settings, LogOut, Home, Truck, LayoutDashboard
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
 interface AccountSidebarProps {
-    activePage?: 'profile' | 'orders' | 'wishlist' | 'addresses' | 'settings' | 'track-order';
+    activePage?: 'dashboard' | 'profile' | 'orders' | 'wishlist' | 'addresses' | 'settings' | 'track-order';
 }
 
 export function AccountSidebar({ activePage }: AccountSidebarProps) {
@@ -20,6 +20,7 @@ export function AccountSidebar({ activePage }: AccountSidebarProps) {
     };
 
     const navigationItems = [
+        { href: '/account', icon: LayoutDashboard, label: 'Dashboard', id: 'dashboard' },
         { href: '/profile', icon: User, label: 'Profile', id: 'profile' },
         { href: '/orders', icon: Package, label: 'Orders', id: 'orders' },
         { href: '/track-order', icon: Truck, label: 'Track Order', id: 'track-order' },

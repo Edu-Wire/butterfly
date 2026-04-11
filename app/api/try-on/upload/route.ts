@@ -1,13 +1,6 @@
-
 import { NextResponse } from 'next/server';
-import { v2 as cloudinary } from 'cloudinary';
-
-// Configure Cloudinary
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+import { uploadToCloudinary } from '@/lib/cloudinary';
+import { uploadToS3 } from '@/lib/s3';
 
 // Increase Next.js route timeout
 export const maxDuration = 300; // 5 minutes
@@ -16,6 +9,7 @@ export async function POST(req: Request) {
     try {
         const formData = await req.formData();
         const file = formData.get('file') as File;
+        const storageStrategy = process.env.IMAGE_STORAGE || 'cloudinary';
 
         if (!file) {
             return NextResponse.json(
@@ -24,35 +18,36 @@ export async function POST(req: Request) {
             );
         }
 
-        // Check file size - cap at 5MB
-        if (file.size > 5 * 1024 * 1024) {
+        // Check file size - cap at 40MB
+        if (file.size > 40 * 1024 * 1024) {
             return NextResponse.json(
-                { error: 'Image too large. Please use an image under 5MB.' },
+                { error: 'Image too large. Please use an image under 40MB.' },
                 { status: 400 }
             );
         }
 
-        const buffer = await file.arrayBuffer();
-        const base64String = Buffer.from(buffer).toString('base64');
-        const dataURI = `data:${file.type};base64,${base64String}`;
+        const buffer = Buffer.from(await file.arrayBuffer());
+        const timestamp = Date.now();
+        const filename = `${timestamp}-${file.name.replace(/\s+/g, '-')}`;
 
-        const uploadResponse = await cloudinary.uploader.upload(dataURI, {
-            folder: 'butterfly-couture/try-on',
-            // Resize on upload to keep it fast and within Cloudinary limits
-            transformation: [
-                { width: 1024, height: 1024, crop: 'limit', quality: 'auto:good' }
-            ],
-            timeout: 300000, // 5 minutes
-        });
+        let url: string = '';
+
+        if (storageStrategy === 's3') {
+            // Respect the S3 configuration
+            url = await uploadToS3(buffer, filename, file.type);
+        } else {
+            // Fallback to Cloudinary but use the optimized stream upload
+            const uploadResponse: any = await uploadToCloudinary(buffer, filename, file.type);
+            url = typeof uploadResponse === 'string' ? uploadResponse : uploadResponse.secure_url;
+        }
 
         return NextResponse.json({
-            url: uploadResponse.secure_url,
-            public_id: uploadResponse.public_id,
+            url: url,
         });
-    } catch (error) {
-        console.error('Error uploading to Cloudinary:', error);
+    } catch (error: any) {
+        console.error('Error uploading image:', error);
         return NextResponse.json(
-            { error: 'Failed to upload image. Please try a smaller image.' },
+            { error: error.message || 'Failed to upload image. Please try again.' },
             { status: 500 }
         );
     }

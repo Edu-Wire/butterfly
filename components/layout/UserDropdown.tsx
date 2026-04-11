@@ -14,7 +14,8 @@ import {
   Settings,
   Package,
   ShieldCheck,
-  Heart
+  Heart,
+  LayoutDashboard
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -66,8 +67,15 @@ export function UserDropdown() {
               {/* Menu Items */}
               <div className="flex flex-col gap-1">
                 <DropdownMenuItem asChild className="rounded-xl focus:bg-white/60 focus:backdrop-blur-sm cursor-pointer py-2.5 px-3 text-gray-700 focus:text-black font-medium transition-all duration-200">
+                  <Link href="/account" className="flex items-center w-full">
+                    <LayoutDashboard className="mr-3 h-4 w-4 text-gray-500" strokeWidth={2} />
+                    <span>Dashboard</span>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild className="rounded-xl focus:bg-white/60 focus:backdrop-blur-sm cursor-pointer py-2.5 px-3 text-gray-700 focus:text-black font-medium transition-all duration-200">
                   <Link href="/profile" className="flex items-center w-full">
-                    <Settings className="mr-3 h-4 w-4 text-gray-500" strokeWidth={2} />
+                    <User className="mr-3 h-4 w-4 text-gray-500" strokeWidth={2} />
                     <span>Profile</span>
                   </Link>
                 </DropdownMenuItem>

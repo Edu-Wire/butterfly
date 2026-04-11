@@ -17,7 +17,8 @@ import {
   X,
   ShoppingBag,
   Package,
-  User
+  User,
+  LayoutDashboard
 } from 'lucide-react'
 import { useAuth } from '@/contexts/AuthContext'
 import { CartDrawer } from './CartDrawer'
@@ -406,6 +407,14 @@ export function Header() {
                   >
                     {user ? (
                       <>
+                        <Link
+                          href="/account"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="flex items-center gap-3 py-3 text-white transition-colors"
+                        >
+                          <LayoutDashboard size={18} />
+                          <span className="text-sm">Dashboard</span>
+                        </Link>
                         <Link
                           href="/profile"
                           onClick={() => setIsMobileMenuOpen(false)}

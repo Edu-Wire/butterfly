@@ -28,7 +28,14 @@ export async function createTryOn(params: FashnTryOnParams): Promise<FashnRespon
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`,
         },
-        body: JSON.stringify(params),
+        body: JSON.stringify({
+            model_name: "tryon-v1.6",
+            inputs: {
+                model_image: params.model_image,
+                garment_image: params.garment_image,
+                category: params.category,
+            }
+        }),
     });
 
     const data = await response.json();

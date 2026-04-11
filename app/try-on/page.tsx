@@ -95,9 +95,9 @@ export default function TryOnPage() {
         const file = e.target.files?.[0];
         if (!file) return;
 
-        // Client-side 5MB size limit check
-        if (file.size > 5 * 1024 * 1024) {
-            showToast.error('Image too large. Please use an image under 5MB.');
+        // Client-side 40MB size limit check
+        if (file.size > 40 * 1024 * 1024) {
+            showToast.error('Image too large. Please use an image under 40MB.');
             e.target.value = '';
             return;
         }
@@ -300,7 +300,7 @@ export default function TryOnPage() {
                                         <Camera className="w-8 h-8 text-gray-400" />
                                     </div>
                                     <p className="text-sm font-bold tracking-widest uppercase">Upload Your Photo</p>
-                                    <p className="text-xs text-gray-500 mt-2">Full body shot works best · Max 5MB</p>
+                                    <p className="text-xs text-gray-500 mt-2">Full body shot works best · Max 40MB</p>
                                 </div>
                             )}
 

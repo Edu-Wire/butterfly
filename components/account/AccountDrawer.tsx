@@ -5,14 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-    User, Package, Heart, MapPin, Settings, LogOut, X, Menu, Truck
+    User, Package, Heart, MapPin, Settings, LogOut, X, Menu, Truck, LayoutDashboard
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 
 interface AccountDrawerProps {
     isOpen: boolean;
     onOpenChange: (open: boolean) => void;
-    activePage?: 'profile' | 'orders' | 'wishlist' | 'addresses' | 'settings' | 'track-order';
+    activePage?: 'dashboard' | 'profile' | 'orders' | 'wishlist' | 'addresses' | 'settings' | 'track-order';
 }
 
 export function AccountDrawer({ isOpen, onOpenChange, activePage }: AccountDrawerProps) {
@@ -52,6 +52,7 @@ export function AccountDrawer({ isOpen, onOpenChange, activePage }: AccountDrawe
     };
 
     const navigationItems = [
+        { href: '/account', icon: LayoutDashboard, label: 'Dashboard', section: 'account' },
         { href: '/profile', icon: User, label: 'Profile', section: 'account' },
         { href: '/orders', icon: Package, label: 'Orders', section: 'shopping' },
         { href: '/track-order', icon: Truck, label: 'Track Order', section: 'shopping' },
@@ -110,7 +111,7 @@ export function AccountDrawer({ isOpen, onOpenChange, activePage }: AccountDrawe
 
                             <nav className="space-y-2">
                                 {navigationItems.map((link) => {
-                                    const isActive = link.href === `/${activePage}`;
+                                    const isActive = (activePage === 'dashboard' && link.href === '/account') || link.href === `/${activePage}`;
                                     return (
                                         <Link
                                             key={link.label}
