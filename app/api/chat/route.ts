@@ -29,7 +29,11 @@ export async function POST(request: NextRequest) {
 
     // Get current products for context
     const products = getAllProducts()
-    const productsContext = products.map(p => `- ${p.name}: ${p.category} ($${p.price})`).join('\n')
+    const productsContext = products && products.length > 0
+      ? products.map(p => `- ${p.name}: ${p.category} ($${p.price})`).join('\n')
+      : "No products currently available."
+
+    console.log(`[API] AI Request: ${GPT_MODEL}`);
 
     const completion = await openai.chat.completions.create({
       model: GPT_MODEL,
@@ -50,7 +54,7 @@ export async function POST(request: NextRequest) {
           Keep responses concise but polite and premium.`
         },
         ...history.map((m: any) => ({
-          role: m.role,
+          role: m.role === 'assistant' ? 'assistant' : 'user',
           content: m.content
         })),
         {
@@ -62,20 +66,27 @@ export async function POST(request: NextRequest) {
       max_tokens: 300,
     })
 
-    const response = completion.choices[0]?.message?.content || "I'm sorry, I couldn't process that. How else can I help you?"
+    const responseContent = completion.choices[0]?.message?.content || "I'm sorry, I couldn't process that. How else can I help you?"
 
     return NextResponse.json({
       success: true,
       data: {
-        message: response,
+        message: responseContent,
         timestamp: new Date().toISOString(),
       },
     })
   } catch (error: any) {
-    console.error('[API] Chat error:', error)
+    console.error('[API] Chat error:', {
+      message: error.message,
+      status: error.status,
+      code: error.code
+    })
     return NextResponse.json(
-      { success: false, error: error.message || 'Failed to process message' },
-      { status: 500 }
+      { 
+        success: false, 
+        error: error.message || 'Failed to process message' 
+      },
+      { status: error.status || 500 }
     )
   }
 }
