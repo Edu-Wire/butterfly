@@ -1,0 +1,36 @@
+Connecting...
+Connected.
+Pending Orders Aggregation Result: [
+  {
+    "_id": {
+      "productId": "6986dfe8b02974b88130a573",
+      "size": "M",
+      "color": "Black"
+    },
+    "totalPending": 45
+  }
+]
+
+Checking Inventory for Product: 6986dfe8b02974b88130a573, Size: M, Color: Black
+No Exact Match. Trying Size Only...
+Found Inventory Item: {
+  "_id": "698c3a47844bea70914de521",
+  "productId": "6986dfe8b02974b88130a573",
+  "color": "N/A",
+  "size": "M",
+  "sku": "DRS-GEN-001",
+  "totalStock": 50,
+  "reservedStock": 45,
+  "lowStockThreshold": 5,
+  "status": "in_stock",
+  "warehouseLocation": "Shelf A-12",
+  "aisle": "3",
+  "shelf": "B",
+  "supplier": "Fashion Fabrics Ltd",
+  "batchNumber": "BATCH-2024-FEB",
+  "costPrice": 450,
+  "soldCount": 0,
+  "createdAt": "2026-02-11T08:13:59.749Z",
+  "updatedAt": "2026-02-11T08:35:43.893Z",
+  "__v": 0
+}

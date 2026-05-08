@@ -1,0 +1,13 @@
+Connecting to DB...
+Connected to DB
+Found 1 inventory records.
+
+SKU: DRS-GEN-001
+Product ID: 6986dfe8b02974b88130a573
+TotalStock: 50
+ReservedStock: 0
+AvailableStock: undefined
+SoldCount: 0
+Color: N/A, Size: M
+
+Order ORD-FL2AFX5 not found

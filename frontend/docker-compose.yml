@@ -1,0 +1,135 @@
+version: '3.8'
+
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:7.0
+    container_name: butterfly-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: eduwireinfo
+      MONGO_INITDB_ROOT_PASSWORD: TP6fseKwMQCTfwGH
+      MONGO_INITDB_DATABASE: butterfly
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./scripts/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - butterfly-network
+
+  # Redis Cache (Optional - for production)
+  redis:
+    image: redis:7.2-alpine
+    container_name: butterfly-redis
+    restart: unless-stopped
+    command: redis-server --requirepass your-redis-password
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - butterfly-network
+    profiles:
+      - production
+
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: butterfly-app
+    restart: unless-stopped
+    environment:
+      # Database
+      MONGODB_URI: mongodb://eduwireinfo:TP6fseKwMQCTfwGH@mongodb:27017/butterfly?authSource=admin
+      
+      # Authentication
+      JWT_SECRET: butterfly-jwt-secret-2024
+      JWT_EXPIRES_IN: 7d
+      
+      # Email Configuration
+      SMTP_HOST: smtp.zoho.in
+      SMTP_PORT: 587
+      SMTP_USER: butterflycouture@zohomail.in
+      SMTP_PASS: ${SMTP_PASSWORD}
+      SMTP_USERNAME: butterflycouture@zohomail.in
+      SMTP_FROM: "Butterfly Couture" <butterflycouture@zohomail.in>
+      
+      # Cloudinary
+      CLOUDINARY_CLOUD_NAME: dgpm72swx
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+      
+      # AWS S3
+      AWS_REGION: ap-south-1
+      AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+      AWS_BUCKET_NAME: butterfly-couture-assets
+      
+      # AI Services
+      SEGMIND_API_KEY: ${SEGMIND_API_KEY}
+      REPLICATE_API_TOKEN: ${REPLICATE_API_TOKEN}
+      FASHN_API_KEY: ${FASHN_API_KEY}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      GPT_MODEL: ${GPT_MODEL}
+      
+      # Redis (Optional)
+      REDIS_URL: redis://:your-redis-password@redis:6379
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: your-redis-password
+      REDIS_USERNAME: default
+      
+      # Next.js
+      NODE_ENV: production
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL}
+      NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID}
+      NEXT_PUBLIC_BRAND_COLOR: 000000
+      NEXT_PUBLIC_ACCENT_COLOR: FFD700
+      
+      # Store Configuration
+      STORE_NAME: "Butterfly Couture"
+      STORE_CURRENCY: INR
+      STORE_TAX_RATE: 0.0825
+      CONTACT_EMAIL: butterflycouture@zohomail.in
+      SUPPORT_EMAIL: butterflycouture@zohomail.in
+      
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    networks:
+      - butterfly-network
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+
+  # Nginx Reverse Proxy (Production)
+  nginx:
+    image: nginx:alpine
+    container_name: butterfly-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./logs/nginx:/var/log/nginx
+    depends_on:
+      - app
+    networks:
+      - butterfly-network
+    profiles:
+      - production
+
+volumes:
+  mongodb_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  butterfly-network:
+    driver: bridge

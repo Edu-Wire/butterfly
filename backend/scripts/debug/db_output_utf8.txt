@@ -1,0 +1,32 @@
+﻿[dotenv@17.2.4] injecting env (7) from .env -- tip: ΓÜÖ∩╕Å  suppress all logs with { quiet: true }
+Searching for product: 698ef987ac9bd42fb38eedde
+--- Found Product ---
+{
+  "_id": "698ef987ac9bd42fb38eedde",
+  "name": "shirt",
+  "brand": "Butterfly Couture",
+  "price": 100,
+  "category": "Noir ├ëlan",
+  "subCategory": "Cocktail",
+  "gender": "Male",
+  "colors": [
+    "red"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+  "rating": 0,
+  "reviewsCount": 0,
+  "images": [
+    "https://butter-fly-bucket-ecom.s3.ap-south-1.amazonaws.com/uploads/A7403540.JPG"
+  ],
+  "imageGradient": "https://butter-fly-bucket-ecom.s3.ap-south-1.amazonaws.com/uploads/A7403540.JPG",
+  "inStock": true,
+  "stock": 0,
+  "isActive": true,
+  "createdAt": "2026-02-13T10:14:31.066Z",
+  "updatedAt": "2026-02-13T10:14:31.066Z",
+  "__v": 0
+}

@@ -1,0 +1,5 @@
+Connecting to DB...
+Connected OK
+Updating collection: products
+Modified: 0
+DONE SUCCESS

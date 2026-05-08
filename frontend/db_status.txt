@@ -1,0 +1,92 @@
+﻿[dotenv@17.2.4] injecting env (18) from .env -- tip: ≡ƒöä add secrets lifecycle management: https://dotenvx.com/ops
+--- Verifying Data ---
+MONGODB_URI: FOUND (masked)
+Γ£à Connected to MongoDB
+Database name: butterfly
+Collections in database: [
+  'banners',
+  'reviews',
+  'products',
+  'inventories',
+  'orders',
+  'categories',
+  'returnrequests',
+  'settings',
+  'users',
+  'contacts',
+  'collections',
+  'wishlists',
+  'inventorymovements'
+]
+Found 4 documents in 'collections'
+First collection document: {
+  "_id": "69846c3255e6bd8576eed25a",
+  "name": "Velvet Eclipse",
+  "slug": "new-arrivals",
+  "description": "Bold silhouettes in the spotlight.",
+  "products": [
+    "699017c3d5adcaa0a3ae8c32",
+    "699017c3d5adcaa0a3ae8c33",
+    "6990513c884d729db6c4cda1",
+    "699017c3d5adcaa0a3ae8c35",
+    "699017c3d5adcaa0a3ae8c36",
+    "6990513c884d729db6c4cda2",
+    "6990513c884d729db6c4cda5",
+    "6990513c884d729db6c4cda6",
+    "6990513c884d729db6c4cda7",
+    "6990513c884d729db6c4cda8",
+    "6990513c884d729db6c4cda9"
+  ],
+  "bannerImage": "https://res.cloudinary.com/dgpm72swx/image/upload/v1770984348/butterfly-couture/1770984344892-blob.png",
+  "isFeatured": false,
+  "isActive": true,
+  "createdAt": "2026-02-05T10:08:50.174Z",
+  "updatedAt": "2026-03-06T10:33:28.110Z",
+  "__v": 0,
+  "order": 3
+}
+Found 50 documents in 'products'
+First product document: {
+  "_id": "69903353884d729db6c4cbcf",
+  "name": "Neo",
+  "brand": "Butterfly Couture",
+  "price": 345700,
+  "category": "shirt",
+  "collectionName": "The Black Atelier",
+  "subCategory": "Evening Wear",
+  "gender": "Male",
+  "colors": [
+    "Black",
+    "Midnight Blue"
+  ],
+  "sizes": [
+    "S",
+    "M",
+    "L"
+  ],
+  "rating": 0,
+  "reviewsCount": 0,
+  "images": [
+    "https://res.cloudinary.com/dgpm72swx/image/upload/v1771057842/butterfly-couture/1771057841554-blob.jpg",
+    "https://res.cloudinary.com/dgpm72swx/image/upload/v1771057862/butterfly-couture/1771057861340-blob.jpg",
+    "https://res.cloudinary.com/dgpm72swx/image/upload/v1771057875/butterfly-couture/1771057874472-blob.jpg"
+  ],
+  "imageGradient": "linear-gradient(45deg,#000,#444)",
+  "inStock": true,
+  "stock": 0,
+  "description": "Luxury evening wear designed for premium formal occasions and events.",
+  "fabricComposition": "Premium Polyester Blend",
+  "fit": "Tailored Fit",
+  "closure": "Front Button",
+  "sleeveType": "Full Sleeve",
+  "washCare": "Dry Clean Only",
+  "countryOfManufacture": "India",
+  "modelSize": "M",
+  "modelHeight": "6'0",
+  "shippingTime": "Within 7-10 Days",
+  "isActive": true,
+  "createdAt": "2026-02-14T08:33:23.434Z",
+  "updatedAt": "2026-02-14T08:33:23.434Z",
+  "__v": 0
+}
+Disconnected.
